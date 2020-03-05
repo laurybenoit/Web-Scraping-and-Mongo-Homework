@@ -42,4 +42,24 @@ def Mars_Space_Images(browser):
 
     return image_url, image_url2
 
+def mars_twitter(browser):
+    url = 'https://twitter.com/marswxreport?lang=en'
+    browser.visit(url)
+    
+    html = browser.html
+    twitter_soup = BeautifulSoup(html, "html.parser")
+
+    try:
+        mars_twitter = twitter_soup.find(name=None)
+        twitter2 = mars_twitter.find("p", "tweet-text")
+    
+    return mars_twitter, twitter2
+
+
+
+
+
+    
+
+
     
